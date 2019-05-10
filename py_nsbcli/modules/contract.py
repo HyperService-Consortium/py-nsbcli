@@ -1,6 +1,6 @@
 from io import BytesIO
 
-from config import ENC
+from py_nsbcli.config import ENC
 from py_nsbcli import TransactionHeader, Wallet
 from py_nsbcli.modules import Client
 from py_nsbcli.util import GoJson

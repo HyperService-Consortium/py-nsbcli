@@ -25,5 +25,6 @@ py_nsbcli/types/transaction_header.py
 py_nsbcli/types/wallet.py
 py_nsbcli/util/__init__.py
 py_nsbcli/util/cast.py
+py_nsbcli/util/gojson.py
 py_nsbcli/util/gotypes.py
 py_nsbcli/util/util.py
