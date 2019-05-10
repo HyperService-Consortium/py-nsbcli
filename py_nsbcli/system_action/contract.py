@@ -2,8 +2,8 @@ import base64
 import json
 
 from py_nsbcli.config import ENC
-from system_action.action import Action
-from modules.contract import Contract
+from py_nsbcli.system_action.action import Action
+from py_nsbcli.modules.contract import Contract
 
 
 class SystemAction(Contract):

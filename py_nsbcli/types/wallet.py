@@ -1,8 +1,8 @@
 
 import platform
-from ctypes import CDLL
+import ctypes.util
 
-from util.gotypes import (
+from py_nsbcli.util.gotypes import (
     GoInt32,
     GoString,
     GoBytes,
@@ -10,17 +10,14 @@ from util.gotypes import (
     GoWalletptr
 )
 
-
-from py_nsbcli.config import INCLUDE_PATH
-
 ENC = "utf-8"
 
 if platform.system() == "Windows":
-    funcs = CDLL(INCLUDE_PATH + "/cwallet.dll")
+    funcs = ctypes.CDLL(ctypes.util.find_library('pynsbcli_cwallet_windows'))
 elif platform.system() == "Darwin":
-    funcs = CDLL(INCLUDE_PATH + "/cwallet_mac.dll")
+    funcs = ctypes.CDLL(ctypes.util.find_library('pynsbcli_cwallet_mac'))
 elif platform.system() == "Linux":
-    funcs = CDLL(INCLUDE_PATH + "/cwallet_linux.dll")
+    funcs = ctypes.CDLL(ctypes.util.find_library('pynsbcli_cwallet_linux'))
 else:
     raise ImportError("no corresponding cwallet api on this platform")
 

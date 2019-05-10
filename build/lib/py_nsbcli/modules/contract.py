@@ -1,8 +1,8 @@
 from io import BytesIO
 
 from py_nsbcli.config import ENC
-from types import TransactionHeader, Wallet
-from modules import Client
+from py_nsbcli.types import TransactionHeader, Wallet
+from py_nsbcli.modules import Client
 
 
 class Contract(object):

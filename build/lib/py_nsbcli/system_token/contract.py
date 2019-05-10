@@ -2,8 +2,8 @@ import base64
 import json
 
 from py_nsbcli.config import ENC
-from util.cast import transbytes
-from modules.contract import Contract
+from py_nsbcli.util.cast import transbytes
+from py_nsbcli.modules.contract import Contract
 
 
 class SystemToken(Contract):

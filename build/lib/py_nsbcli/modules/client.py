@@ -7,7 +7,7 @@ except ImportError or ModuleNotFoundError as e:
     exit(1)
 
 from py_nsbcli.config import HTTP_HEADERS, ENC
-from modules.admin import Admin
+from py_nsbcli.modules.admin import Admin
 
 
 class Client(object):
