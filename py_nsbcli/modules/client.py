@@ -1,23 +1,26 @@
 import json
-
-try:
-    import requests
-except ImportError or ModuleNotFoundError as e:
-    print(e)
-    exit(1)
+import requests
 
 from py_nsbcli.config import HTTP_HEADERS, ENC
-from py_nsbcli.modules.admin import Admin
+from py_nsbcli.modules.admin import get_admin
 
 
 class Client(object):
-    def __init__(self, bind_admin: Admin):
-        self._admin = bind_admin
+    def __init__(self, bind_admin):
+        if isinstance(bind_admin, Client):
+            self._admin = get_admin(bind_admin.admin)
+            self.http_header = bind_admin.http_header
+            return
+        self._admin = get_admin(bind_admin)
         self.http_header = HTTP_HEADERS
 
     @property
     def admin(self):
         return self._admin
+
+    @property
+    def host(self):
+        return self._admin.rpc_host
 
     def set_http_header(self, new_header):
         self.http_header = new_header

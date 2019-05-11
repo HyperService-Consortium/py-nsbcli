@@ -6,10 +6,24 @@ from py_nsbcli.modules import Client
 from py_nsbcli.util import GoJson
 
 
-
 class Contract(object):
-    def __init__(self, cli: Client):
-        self.cli = cli
+    def __init__(self, cli, bind_address=None):
+        self.cli = Client(cli)
+        self._address = bind_address
+
+    @property
+    def address(self):
+        return self._address
+
+    @address.setter
+    def address(self, addr: str or bytes):
+        if isinstance(addr, str):
+            if addr[0:2] == '0x':
+                addr = addr[2:]
+            self._address = bytes.fromhex(addr)
+        elif not isinstance(addr, bytes):
+            raise TypeError("contract address must be 32bytes hex string or bytes")
+        self._address = addr
 
     def broadcast_tx_commit(self, tx: str):
         return self.cli.get_json(self.cli.admin.broadcast_tx_commit_url, params={"tx": tx})

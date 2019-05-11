@@ -5,19 +5,19 @@ from setuptools import setup, find_packages
 
 setup(
     name='py_nsbcli',
-    version='0.5.9',
+    version='0.5.12',
     description=(
         'interacting with Tendermint-NSB from python'
     ),
     long_description=open('README.md').read(),
-    author='myriaddreamin',
+    author='Myriad Dreamin',
     author_email='xyangxi5@gmail.com',
     maintainer='Myriad-Dreamin',
     maintainer_email='xyangxi5@gmail.com',
     license='BSD 3-Clause "New" or "Revised" License',
     packages=find_packages(),
     platforms=["MacOS", "Windows"],
-    install_requires=['hexbytes', ],
+    install_requires=['hexbytes', 'requests', ],
     url='https://github.com/Myriad-Dreamin/py-nsbcli',
     classifiers=[
         'Development Status :: 2 - Pre-Alpha',
