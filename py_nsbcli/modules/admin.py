@@ -65,7 +65,7 @@ class Admin(object):
 
 
 _admin_singleton = Admin()
-_admin_singleton_mode = False
+_admin_singleton_mode = True
 # _admin_list = []
 
 
@@ -78,7 +78,7 @@ def _get_admin_no_singleton(*args, **kwargs):
     return Admin(*args, **kwargs)
 
 
-get_admin = _get_admin_no_singleton
+get_admin = _get_admin_singleton
 
 
 def set_admin_singleton_mode(mode_on):
