@@ -17,7 +17,7 @@ if platform.system() == "Windows":
 elif platform.system() == "Darwin":
     funcs = ctypes.CDLL(INCLUDE_PATH + "/cwallet_mac.dll")
 elif platform.system() == "Linux":
-    funcs = ctypes.CDLL(ctypes.util.find_library('pynsbcli_cwallet_linux'))
+    funcs = ctypes.CDLL(INCLUDE_PATH + "/pynsbcli_cwallet_linux.dll")
 else:
     raise ImportError("no corresponding cwallet api on this platform")
 
