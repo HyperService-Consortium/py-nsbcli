@@ -28,7 +28,15 @@ class Admin(object):
         self._unsubscribe_all_url = None
         self._validators_url = None
 
-        self.rpc_host = host_addr
+        print("host_addr", host_addr)
+        if isinstance(host_addr, str):
+            self.set_rpc_host(host_addr)
+        elif isinstance(host_addr, Admin):
+            self.set_rpc_host(host_addr.host)
+        elif host_addr is None:
+            self.rpc_host = None
+        else:
+            raise TypeError("not valid admin/host address type")
 
     @property
     def host(self):

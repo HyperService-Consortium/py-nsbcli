@@ -6,7 +6,6 @@ from py_nsbcli.modules import Client
 from py_nsbcli.util import GoJson
 
 
-
 class Contract(object):
     def __init__(self, cli: Client):
         self.cli = cli
