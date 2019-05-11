@@ -30,7 +30,7 @@ class SystemToken(Contract):
             0
         )
 
-    def transact(self, wlt, to_addr, value: int or bytes or str):
+    def transfer(self, wlt, to_addr, value: int or bytes or str):
 
         value = transbytes(value, 32)
 
@@ -41,7 +41,7 @@ class SystemToken(Contract):
             raise ValueError("value(uint256) overflow")
 
         data_set_balance = {
-            "function_name": "transact",
+            "function_name": "transfer",
             "args": base64.b64encode(json.dumps({
                 "1": base64.b64encode(value).decode(),
             }).encode(ENC)).decode()

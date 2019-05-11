@@ -1,9 +1,9 @@
 Metadata-Version: 1.2
 Name: py-nsbcli
-Version: 0.5.9
+Version: 0.5.13
 Summary: interacting with Tendermint-NSB from python
 Home-page: https://github.com/Myriad-Dreamin/py-nsbcli
-Author: myriaddreamin
+Author: Myriad Dreamin
 Author-email: xyangxi5@gmail.com
 Maintainer: Myriad-Dreamin
 Maintainer-email: xyangxi5@gmail.com
