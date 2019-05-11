@@ -5,7 +5,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='py_nsbcli',
-    version='0.5.15',
+    version='0.5.17',
     description=(
         'interacting with Tendermint-NSB from python'
     ),
