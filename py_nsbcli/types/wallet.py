@@ -16,7 +16,7 @@ ENC = "utf-8"
 if platform.system() == "Windows":
     funcs = ctypes.CDLL(ctypes.util.find_library('pynsbcli_cwallet_windows'))
 elif platform.system() == "Darwin":
-    funcs = ctypes.CDLL(INCLUDE_PATH + "/cwallet_mac.dll")
+    funcs = ctypes.CDLL(INCLUDE_PATH + "/pynsbcli_cwallet_mac.dll")
 elif platform.system() == "Linux":
     funcs = ctypes.CDLL(INCLUDE_PATH + "/pynsbcli_cwallet_linux.dll")
 else:
