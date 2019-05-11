@@ -10,6 +10,7 @@ from py_nsbcli.util.gotypes import (
     GoWalletptr
 )
 
+from py_nsbcli.config import INCLUDE_PATH
 ENC = "utf-8"
 
 if platform.system() == "Windows":
