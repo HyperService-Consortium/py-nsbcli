@@ -94,4 +94,4 @@ class Contract(object):
         bytes_buffer.write(prec_name)
         bytes_buffer.write(tx_header.json().encode('utf-8'))
 
-        self.broadcast_tx_commit(tx="0x" + bytes_buffer.getvalue().hex())
+        return self.broadcast_tx_commit(tx="0x" + bytes_buffer.getvalue().hex())

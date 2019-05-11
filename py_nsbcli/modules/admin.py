@@ -28,7 +28,6 @@ class Admin(object):
         self._unsubscribe_all_url = None
         self._validators_url = None
 
-        print("host_addr", host_addr)
         if isinstance(host_addr, str):
             self.set_rpc_host(host_addr)
         elif isinstance(host_addr, Admin):
@@ -61,15 +60,15 @@ class Admin(object):
         self._abci_query_url = self.rpc_host + "/abci_query"
         self._broadcast_tx_commit_url = self.rpc_host + "/broadcast_tx_commit"
 
-        print(host_name)
+        return host_name
 
 
-_admin_singleton = Admin()
-_admin_singleton_mode = True
+_admin_singleton = Admin("http://127.0.0.1:26657")
+_admin_singleton_mode = False
 # _admin_list = []
 
 
-def _get_admin_singleton(_):
+def _get_admin_singleton(_=None):
     global _admin_singleton
     return _admin_singleton
 
@@ -78,7 +77,7 @@ def _get_admin_no_singleton(*args, **kwargs):
     return Admin(*args, **kwargs)
 
 
-get_admin = _get_admin_singleton
+get_admin = _get_admin_no_singleton
 
 
 def set_admin_singleton_mode(mode_on):
